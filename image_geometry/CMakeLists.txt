@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 2.8)
 project(image_geometry)
 
 find_package(catkin REQUIRED sensor_msgs)
-find_package(OpenCV REQUIRED)
+#find_package(OpenCV REQUIRED)
+find_package(OpenCV 3.4.1 REQUIRED
+        PATHS /opt/opencv3
+        NO_DEFAULT_PATH
+)
 
 catkin_package(CATKIN_DEPENDS sensor_msgs
                DEPENDS OpenCV
@@ -19,6 +23,8 @@ include_directories(${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 add_library(${PROJECT_NAME} src/pinhole_camera_model.cpp src/stereo_camera_model.cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBRARIES})
 add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
+
+# message("OpenCV lib = " ${OpenCV_LIBRARIES})
 
 install(DIRECTORY include/${PROJECT_NAME}/
         DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}/

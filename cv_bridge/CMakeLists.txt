@@ -11,13 +11,16 @@ if(NOT ANDROID)
     find_package(Boost REQUIRED python3)
   endif()
 else()
-find_package(Boost REQUIRED)
+  find_package(Boost REQUIRED)
 endif()
-find_package(OpenCV 3 REQUIRED
-  COMPONENTS
-    opencv_core
-    opencv_imgproc
-    opencv_imgcodecs
+
+find_package(OpenCV 3.4.1 REQUIRED
+#  COMPONENTS
+#    opencv_core
+#    opencv_imgproc
+#    opencv_imgcodecs
+  PATHS /opt/opencv3
+  NO_DEFAULT_PATH
   CONFIG
 )
 
