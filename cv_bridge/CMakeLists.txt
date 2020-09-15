@@ -14,15 +14,16 @@ else()
   find_package(Boost REQUIRED)
 endif()
 
-find_package(OpenCV 3.4.1 REQUIRED
-#  COMPONENTS
-#    opencv_core
-#    opencv_imgproc
-#    opencv_imgcodecs
-  PATHS /opt/opencv3
-  NO_DEFAULT_PATH
-  CONFIG
-)
+find_package(OpenCV REQUIRED)
+#find_package(OpenCV 3.4.1 REQUIRED
+##  COMPONENTS
+##    opencv_core
+##    opencv_imgproc
+##    opencv_imgcodecs
+#  PATHS /opt/opencv3
+#  NO_DEFAULT_PATH
+#  CONFIG
+#)
 
 catkin_package(
   INCLUDE_DIRS include

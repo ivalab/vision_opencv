@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 2.8)
 project(image_geometry)
 
 find_package(catkin REQUIRED sensor_msgs)
-#find_package(OpenCV REQUIRED)
-find_package(OpenCV 3.4.1 REQUIRED
-        PATHS /opt/opencv3
-        NO_DEFAULT_PATH
-)
+find_package(OpenCV REQUIRED)
+#find_package(OpenCV 3.4.1 REQUIRED
+#        PATHS /opt/opencv3
+#        NO_DEFAULT_PATH
+#)
 
 catkin_package(CATKIN_DEPENDS sensor_msgs
                DEPENDS OpenCV
